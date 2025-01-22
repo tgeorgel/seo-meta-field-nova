@@ -63,6 +63,17 @@ class SeoMeta extends Field
     {
         parent::resolve($resource, $attribute);
 
+        // Manually hydrat properties as it works better with spatie/translation plugin
+        if ($resource && ($metaValues = $resource->{$this->attribute})) {
+            $this->value = (object) [
+                'title' => $metaValues->title,
+                'description' => $metaValues->description,
+                'keywords' => $metaValues->keywords,
+                'image' => $metaValues->image,
+                'follow_type' => $metaValues->follow_type,
+            ];
+        }
+
         $meta = [
             'default_values' => false,
             'title_format' => $resource->getSeoTitleFormatter()
