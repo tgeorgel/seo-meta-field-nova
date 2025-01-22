@@ -14,6 +14,8 @@ return [
 
     'seo_status' => env('SEO_STATUS', true),
 
+    'seo_meta_item_model' => Gwd\SeoMeta\Models\SeoMetaItem::class,
+
     /*
     |--------------------------------------------------------------------------
     | Sitemap status

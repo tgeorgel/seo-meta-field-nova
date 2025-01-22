@@ -12,7 +12,7 @@ class SeoMetaItem extends Model
      * @var array
      */
     protected $guarded = [ 'id' ];
-    
+
     /**
      * Hidden variables
      *
@@ -35,7 +35,7 @@ class SeoMetaItem extends Model
      * @var array
      */
     protected $casts = [
-        'params' => 'object'
+        'params' => 'object',
     ];
 
     /**

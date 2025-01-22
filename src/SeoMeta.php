@@ -138,8 +138,9 @@ class SeoMeta extends Field
                                                 $model,
                                                 $attribute)
     {
+        $seoMetaClass = config('seo.seo_meta_item_model', SeoMetaItem::class);
         $has_change = false;
-        $relationship = $model->{$attribute} ?? new SeoMetaItem;
+        $relationship = $model->{$attribute} ?? new $seoMetaClass;
 
         if($model->id){
             if(!$relationship->seo_metaable_type){
